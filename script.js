@@ -18,7 +18,7 @@ document.getElementById('interest-form').addEventListener('submit', async functi
 
     while (tgl <= tanggalAkhir) {
         if (tgl.getDay() === 0) {
-            totalHariMinggu++; // Hari Minggu
+            totalHariMinggu++; // Minggu dilewati
         } else {
             saldo *= (1 + bungaHarian / 100);
             totalHariAktif++;
@@ -28,18 +28,19 @@ document.getElementById('interest-form').addEventListener('submit', async functi
 
     const totalBungaUSD = saldo - modal;
 
-    // 🔁 Ambil kurs terbaru dari exchangerate.host
+    // 🔁 Ambil kurs dari API bebas CORS (stabil untuk GitHub Pages)
     let kurs = 16000; // fallback
-    let kursUpdate = "Default (Rp16.000,00)"; // info default
+    let kursUpdate = "Default (Rp16.000,00)";
     let apiSukses = false;
 
     try {
-        const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=IDR');
+        const res = await fetch("https://open.er-api.com/v6/latest/USD");
         const data = await res.json();
+
         if (data && data.rates && data.rates.IDR) {
             kurs = data.rates.IDR;
             apiSukses = true;
-            const waktuUpdate = new Date(data.date + "T00:00:00Z");
+            const waktuUpdate = new Date(data.time_last_update_utc);
             kursUpdate = waktuUpdate.toLocaleString("id-ID", {
                 day: "2-digit",
                 month: "short",
@@ -71,7 +72,7 @@ document.getElementById('interest-form').addEventListener('submit', async functi
         });
     }
 
-    // 🧾 Hasil ditampilkan
+    // 🧾 Tampilkan hasil
     const hasilEl = document.getElementById('hasil');
     hasilEl.innerHTML = `
         <h3>Hasil Perhitungan</h3>
@@ -86,7 +87,7 @@ document.getElementById('interest-form').addEventListener('submit', async functi
         <hr>
         <p style="font-size: 13px; color: ${apiSukses ? '#7fff7f' : '#ff8080'};">
             ${apiSukses 
-                ? `✅ Kurs diperbarui: ${kursUpdate} (sumber: exchangerate.host)`
+                ? `✅ Kurs diperbarui: ${kursUpdate} (sumber: open.er-api.com)`
                 : `⚠️ Gagal ambil kurs otomatis, gunakan nilai default Rp16.000,00`
             }
         </p>

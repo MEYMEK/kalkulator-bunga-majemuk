@@ -2,90 +2,117 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
-    background: #1A1A1A;
-    padding: 20px;
-    color: #EDEDED;
+  background: #1A1A1A;
+  padding: 20px;
+  color: #EDEDED;
+  margin: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: #8A2BE2;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #af75e6;
-      transition-duration: 0.4s;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  background: #8A2BE2;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #af75e6;
+  transition-duration: 0.4s;
+  box-sizing: border-box;
 }
 
 h1 {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-    text-align: center;
-    color: #EDEDED;
-    margin-bottom: 30px;
-    margin-top: 10px;
+  text-align: center;
+  color: #EDEDED;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 form label {
-    display: block;
-    margin-bottom: 10px;
-      transition-duration: 0.4s;
+  display: block;
+  margin-bottom: 10px;
+  transition-duration: 0.4s;
 }
 
 input {
-        font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
-    padding: 10px 20px;
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    box-sizing: border-box;
-        border-radius: 4px;
-    border: none;
-    color: white;
-    background-color: #af75e6;
-      transition-duration: 0.4s;
-      transition: all 0,3 ease;
-      outline: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #af75e6;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
-input :focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 10px 2px rgba(74, 144, 226, 0,6);
-  background-color: #ffff;
+input:focus {
+  border: 2px solid #ffffff;
+  background-color: #9b5edc;
 }
 
 button {
-      font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
-    padding: 10px 20px;
+  padding: 12px 20px;
   background-color: #af75e6;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #fff;
   text-align: center;
-  display: inline-block;
+  display: block;
+  width: 100%;
   border-radius: 4px;
-  margin-top: 14px;
+  margin-top: 16px;
   transition-duration: 0.4s;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 button:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #fff;
+  color: #000;
 }
 
 .result {
-    margin-top: 20px;
-    padding: 20px;
-    background: #eaf8e5;
-    border-left: 5px solid #2ecc71;
+  margin-top: 20px;
+  padding: 20px;
+  background: #2ecc71;
+  color: #fff;
+  border-left: 5px solid #27ae60;
+  border-radius: 6px;
+  word-wrap: break-word;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+/* 🔽 Responsif untuk HP */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+    box-shadow: 0 0 6px #af75e6;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .result {
+    font-size: 14px;
+    padding: 15px;
+  }
 }

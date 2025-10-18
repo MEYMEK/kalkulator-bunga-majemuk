@@ -94,3 +94,4 @@ document.getElementById('interest-form').addEventListener('submit', async functi
     `;
     hasilEl.classList.remove('hidden');
 });
+

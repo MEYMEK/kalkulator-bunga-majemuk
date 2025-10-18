@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Bunga Majemuk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>KALKULATOR BUNGA MAJEMUK</h1>
+        <form id="interest-form">
+            <label>Modal (USD):
+                <input type="number" step="any" id="modal_usd" required placeholder="Contoh: 10">
+            </label>
+
+            <label>Tanggal Mulai:
+                <input type="date" id="tanggal_mulai" required>
+            </label>
+
+            <label>Tanggal Akhir:
+                <input type="date" id="tanggal_akhir" required>
+            </label>
+
+            <label>Bunga Harian (%):
+                <input type="number" step="any" id="bunga_harian" required placeholder="contoh: 2">
+            </label>
+
+            <button type="submit">HITUNG</button>
+        </form>
+
+        <div id="hasil" class="result hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

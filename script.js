@@ -76,14 +76,14 @@ document.getElementById('interest-form').addEventListener('submit', async functi
     const hasilEl = document.getElementById('hasil');
     hasilEl.innerHTML = `
         <h3>Hasil Perhitungan</h3>
-        <p><strong>Total hari aktif (Senin–Sabtu):</strong> ${totalHariAktif} hari</p>
-        <p><strong>Total hari Minggu dilewati:</strong> ${totalHariMinggu} hari</p>
+        <p>Total hari aktif (Senin–Sabtu): ${totalHariAktif} hari</p>
+        <p>Total hari Minggu dilewati: ${totalHariMinggu} hari</p>
         <hr>
-        <p><strong>Total bunga (USD):</strong> ${formatUSD(totalBungaUSD)}</p>
-        <p><strong>Total akhir (USD):</strong> ${formatUSD(saldo)}</p>
-        <p><strong>Kurs USD ke IDR:</strong> ${formatRupiah(kurs)}</p>
-        <p><strong>Total bunga (IDR):</strong> ${formatRupiah(totalBungaIDR)}</p>
-        <p><strong>Total akhir (IDR):</strong> ${formatRupiah(totalAkhirIDR)}</p>
+        <p>Total bunga (USD): ${formatUSD(totalBungaUSD)}</p>
+        <p>Total akhir (USD): ${formatUSD(saldo)}</p>
+        <p>Kurs USD ke IDR: ${formatRupiah(kurs)}</p>
+        <p>Total bunga (IDR): ${formatRupiah(totalBungaIDR)}</p>
+        <p>Total akhir (IDR): ${formatRupiah(totalAkhirIDR)}</p>
         <hr>
         <p style="font-size: 13px; color: ${apiSukses ? '#7fff7f' : '#ff8080'};">
             ${apiSukses 
@@ -94,4 +94,5 @@ document.getElementById('interest-form').addEventListener('submit', async functi
     `;
     hasilEl.classList.remove('hidden');
 });
+
 
